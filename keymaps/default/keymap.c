@@ -80,3 +80,8 @@ bool oled_task_user(void) {
     return false;  
 }
 #endif
+
+void keyboard_post_init_user(void) {
+    gpio_set_pin_output(GP11);   // Set GP12 as output
+    gpio_write_pin_high(GP11);   // Set GP12 HIGH
+}
