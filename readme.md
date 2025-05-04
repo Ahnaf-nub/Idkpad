@@ -1,6 +1,6 @@
 # idkpad
 
-* Keyboard Maintainer: [Mir Muhammad Abidul Haq Ahnaf](https://github.com/Ahnaf-nub)
+* Maintainer: [Mir Muhammad Abidul Haq Ahnaf](https://github.com/Ahnaf-nub)
 
 Make example for this keyboard (after setting up your build environment):
 
