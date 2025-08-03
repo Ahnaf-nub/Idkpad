@@ -8,7 +8,7 @@ Idkpad is an open-source hardware project for a customizable mechanical keyboard
 ## Project Documentation
 
 ### 3D Render
-![3D View](./assets/3d-view.png)
+![3D View](./assets/3d-view.jpeg)
 
 ### PCB Schematic
 [Download PCB Schematic](./hardware/idkpad_schematic.pdf)
@@ -18,25 +18,21 @@ Idkpad is an open-source hardware project for a customizable mechanical keyboard
 
 ---
 
-## Bill of Materials (BOM)
+## 🧾 Bill of Materials (BOM)
 
-| Item            | Manufacturer/Part No. | Quantity | Notes              |
-|-----------------|----------------------|----------|--------------------|
-| Example: Diode  | 1N4148               | 20       | For switch matrix  |
-| Example: MCU    | ATmega32U4           | 1        | Main controller    |
-| ...             | ...                  | ...      | ...                |
-
-You can also include a BOM CSV or link to a file.
+| Item                   | Manufacturer / Part No.    | Quantity | Notes                                      |
+|------------------------|-----------------------------|----------|--------------------------------------------|
+| OLED Display (0.91")   | HS91L02W2C01 / C5248081     | 1        | 0.91" 128x32 OLED, TH mount, from LCSC     |
+| Rotary Encoder + Switch| —                           | 1        | Alps-style rotary encoder with push button |
+| Seeed XIAO RP2040      | —                           | 1        | Main microcontroller board                 |
+| MX Key Switches        | —                           | 4        | Mechanical switches (Cherry MX footprint)  |
 
 ---
 
 ## Assembly Instructions
 
 1. Gather all components in the BOM.
-2. Solder diodes to the PCB.
-3. Place and solder MCU.
-4. Solder other components as per schematic.
-5. (Add photos, diagrams, or link to a step-by-step guide.)
+2. Place and solder.
 
 ---
 
@@ -47,36 +43,14 @@ See LICENSE file for details.
 
 ---
 
-## Contribution Guidelines
-
-Contributions are welcome!
-- Fork this repo and submit a pull request.
-- Open issues for bugs or feature requests.
-- Please follow the contribution guidelines if present.
-
----
 
 ## Support & Contact
 
-- For questions, open an issue or email: your.email@example.com
-- (Add link to project website/forum/Discord if applicable)
+- For questions, open an issue or email: abidulhaqahnaf@gmail.com
 
 ---
 
-## Versioning
-
-- Current version: v1.0
-- See CHANGELOG.md for release notes.
-
----
-
-## Known Issues
-
-- (List any known issues or link to the issues page)
-
----
-
-## OSHWA Certification (if applicable)
+## OSHWA Certification
 
 [![OSHWA Certified Open Hardware](https://www.oshwa.org/assets/oshw-certification-logo.png)](https://certification.oshwa.org/)
 _Certification UID: (Add your UID if certified, or remove this section if not certified)_
