@@ -52,12 +52,9 @@ jobs:
       - name: List build outputs (debug)
         working-directory: qmk_firmware
         run: ls -lR .build || true
-
+      
       - name: Upload firmware artifact
         uses: actions/upload-artifact@v4
         with:
           name: idkpad-firmware
-          path: |
-            qmk_firmware/.build/*
-            qmk_firmware/*.hex
-            qmk_firmware/*.bin
+          path: qmk_firmware/.build/ahnaf_idkpad_vial.uf2
