@@ -7,7 +7,7 @@ Idkpad is an open-source hardware project for a customizable mechanical keyboard
 
 ## Project Documentation
 
-### 3D Render
+### 3D View
 ![3D View](./assets/3d-view.jpeg)
 
 ### PCB Schematic
@@ -20,29 +20,12 @@ Idkpad is an open-source hardware project for a customizable mechanical keyboard
 
 ## 🧾 Bill of Materials (BOM)
 
-| Item                   | Manufacturer / Part No.    | Quantity | Notes                                      |
-|------------------------|-----------------------------|----------|--------------------------------------------|
-| OLED Display (0.91")   | HS91L02W2C01 / C5248081     | 1        | 0.91" 128x32 OLED, TH mount, from LCSC     |
-| Rotary Encoder + Switch| —                           | 1        | Alps-style rotary encoder with push button |
-| Seeed XIAO RP2040      | —                           | 1        | Main microcontroller board                 |
-| MX Key Switches        | —                           | 4        | Mechanical switches (Cherry MX footprint)  |
-
----
-
-## Assembly Instructions
-
-1. Gather all components in the BOM.
-2. Place and solder.
-
----
-
-## License
-
-This hardware is released under the CERN-OHL-P v2 (or your chosen license).
-See LICENSE file for details.
-
----
-
+| Item                   | Quantity | Notes                                      |
+|------------------------|----------|--------------------------------------------|
+| OLED Display (0.91")   | 1        | 0.91" 128x32 OLED, TH mount.               |
+| Rotary Encoder + Switch| 1        | Alps-style rotary encoder with push button |
+| Seeed XIAO RP2040      | 1        | Main microcontroller board                 |
+| MX Key Switches        | 4        | Mechanical switches (Cherry MX footprint)  |
 
 ## Support & Contact
 
@@ -53,4 +36,3 @@ See LICENSE file for details.
 ## OSHWA Certification
 
 [![OSHWA Certified Open Hardware](https://www.oshwa.org/assets/oshw-certification-logo.png)](https://certification.oshwa.org/)
-_Certification UID: (Add your UID if certified, or remove this section if not certified)_
