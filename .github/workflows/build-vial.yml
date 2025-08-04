@@ -1,4 +1,4 @@
-name: Build Vial firmware
+name: Build idkpad QMK Firmware
 
 on:
   push:
@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout keymap repo
+      - name: Checkout keyboard repo
         uses: actions/checkout@v4
 
       - name: Checkout QMK firmware
@@ -19,12 +19,7 @@ jobs:
           repository: qmk/qmk_firmware
           path: qmk_firmware
 
-      - name: Copy keymap into QMK
-        run: |
-          mkdir -p qmk_firmware/keyboards/ahnaf/idkpad/keymaps/vial
-          cp keymaps/vial/* qmk_firmware/keyboards/ahnaf/idkpad/keymaps/vial/
-
-      - name: Install dependencies
+      - name: Install system dependencies
         run: |
           sudo apt-get update
           sudo apt-get install -y python3-pip gcc-avr binutils-avr avr-libc dfu-programmer dfu-util unzip wget git make
@@ -41,13 +36,28 @@ jobs:
           pip3 install -r requirements.txt
           qmk setup -y
 
+      - name: Copy custom keyboard into QMK
+        run: |
+          mkdir -p qmk_firmware/keyboards/ahnaf
+          cp -r . qmk_firmware/keyboards/ahnaf/idkpad
+
+      - name: List keyboard directory (debug)
+        run: ls -lR qmk_firmware/keyboards/ahnaf/idkpad
+
       - name: Build firmware
         working-directory: qmk_firmware
         run: |
           make ahnaf/idkpad:vial
 
-      - name: Upload firmware
+      - name: List build outputs (debug)
+        working-directory: qmk_firmware
+        run: ls -lR .build || true
+
+      - name: Upload firmware artifact
         uses: actions/upload-artifact@v4
         with:
           name: idkpad-firmware
-          path: qmk_firmware/*.hex
+          path: |
+            qmk_firmware/.build/*
+            qmk_firmware/*.hex
+            qmk_firmware/*.bin
