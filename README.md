@@ -49,6 +49,8 @@ Simply download Vial, connect your macropad, and start customizing your layout w
 
 ---
 
-## OSHWA Certification
+## Licensing
 
-[![OSHWA Certified Open Hardware](https://www.oshwa.org/assets/oshw-certification-logo.png)](https://certification.oshwa.org/)
+- **Hardware (PCB, Schematics):** Licensed under [CERN-OHL-S v2](https://ohwr.org/cern_ohl_s_v2.txt)
+- **Firmware/Software:** Licensed under the [MIT License](LICENSE)
+- **Documentation:** Licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
