@@ -10,25 +10,27 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout your repo
+      - name: Checkout repo
         uses: actions/checkout@v4
 
-      - name: Init QMK submodules
+      - name: Initialize submodules
         run: |
           git submodule update --init --recursive
 
       - name: Install dependencies
         run: |
-          sudo apt update
-          sudo apt install -y python3-pip gcc-avr binutils-avr avr-libc dfu-programmer dfu-util unzip wget git make
+          sudo apt-get update
+          sudo apt-get install -y python3-pip gcc-avr binutils-avr avr-libc dfu-programmer dfu-util unzip wget git make
           pip3 install pillow
 
       - name: Build firmware
         run: |
-          make idkpad:vial
+          make ahnaf/idkpad:vial
 
-      - name: Upload compiled firmware
+      - name: Upload firmware
         uses: actions/upload-artifact@v4
         with:
           name: idkpad-firmware
-          path: '*.bin'
+          path: |
+            *.bin
+            *.hex
