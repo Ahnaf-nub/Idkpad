@@ -10,12 +10,19 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repo
+      - name: Checkout keymap repo
         uses: actions/checkout@v4
 
-      - name: Initialize submodules
+      - name: Checkout QMK firmware
+        uses: actions/checkout@v4
+        with:
+          repository: qmk/qmk_firmware
+          path: qmk_firmware
+
+      - name: Copy keymap into QMK
         run: |
-          git submodule update --init --recursive
+          mkdir -p qmk_firmware/keyboards/ahnaf/idkpad/keymaps/vial
+          cp keymaps/vial/* qmk_firmware/keyboards/ahnaf/idkpad/keymaps/vial/
 
       - name: Install dependencies
         run: |
@@ -24,6 +31,7 @@ jobs:
           pip3 install pillow
 
       - name: Build firmware
+        working-directory: qmk_firmware
         run: |
           make ahnaf/idkpad:vial
 
@@ -31,6 +39,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: idkpad-firmware
-          path: |
-            *.bin
-            *.hex
+          path: qmk_firmware/*.hex
