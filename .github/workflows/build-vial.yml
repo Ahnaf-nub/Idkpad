@@ -14,13 +14,14 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Init QMK submodules
-        run: git submodule update --init --recursive
+        run: |
+          git submodule update --init --recursive
 
       - name: Install dependencies
         run: |
           sudo apt update
           sudo apt install -y python3-pip gcc-avr binutils-avr avr-libc dfu-programmer dfu-util unzip wget git make
-          pip3 install pillow qmk
+          pip3 install pillow
 
       - name: Build firmware
         run: |
@@ -30,4 +31,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: idkpad-firmware
-          path: *.bin
+          path: '*.bin'
