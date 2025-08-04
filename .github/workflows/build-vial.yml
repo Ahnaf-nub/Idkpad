@@ -30,6 +30,13 @@ jobs:
           sudo apt-get install -y python3-pip gcc-avr binutils-avr avr-libc dfu-programmer dfu-util unzip wget git make
           pip3 install pillow
 
+      - name: Setup QMK Python environment
+        working-directory: qmk_firmware
+        run: |
+          python3 -m pip install --upgrade pip
+          pip3 install -r requirements.txt
+          qmk setup -y
+
       - name: Build firmware
         working-directory: qmk_firmware
         run: |
