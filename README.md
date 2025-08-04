@@ -11,6 +11,18 @@
 ## Project Documentation
 
 This macropad features 5 keys and supports 4 fully configurable layers through Vial. Each layer allows for unique key mappings, making it versatile for a variety of workflows. The boot logo appears at startup, and the layer indicator helps you identify which layer is currently active.
+## Vial Configuration
+
+This macropad is fully compatible with [Vial](https://get.vial.today/), a powerful and user-friendly tool for configuring your keyboard or macropad.  
+With Vial, you can:
+
+- Remap any of the 5 keys to any function you like
+- Create and switch between 4 different layers
+- Set up custom macros and shortcuts
+- Instantly update your macropad without reflashing firmware
+
+Simply download Vial, connect your macropad, and start customizing your layout with an intuitive graphical interface.
+![Vial](./assets/vial.png)
 ### 3D View
 ![3D View](./assets/3d-view.jpeg)
 
