@@ -35,11 +35,11 @@ jobs:
           python3 -m pip install --upgrade pip
           pip3 install -r requirements.txt
           qmk setup -y
-
+      
       - name: Copy custom keyboard into QMK
         run: |
-          mkdir -p qmk_firmware/keyboards/ahnaf
-          cp -r . qmk_firmware/keyboards/ahnaf/idkpad
+          mkdir -p qmk_firmware/keyboards/ahnaf/idkpad
+          cp -r config.h keyboard.json rules.mk keymaps qmk_firmware/keyboards/ahnaf/idkpad/
 
       - name: List keyboard directory (debug)
         run: ls -lR qmk_firmware/keyboards/ahnaf/idkpad
