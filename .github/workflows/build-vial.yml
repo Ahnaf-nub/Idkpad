@@ -10,26 +10,27 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout your repository
+        uses: actions/checkout@v4
 
-      - name: Set up Vial‑QMK
+      - name: Clone Vial-QMK
         run: |
-          git clone https://github.com/vial-kb/vial-qmk.git vial-qmk
+          git clone --depth=1 https://github.com/vial-kb/vial-qmk.git
           cd vial-qmk
-          make git-submodule
+          git submodule update --init --recursive
 
-      - name: Copy idkpad to build folder
+      - name: Copy your idkpad keyboard into Vial-QMK
         run: |
-          cd vial-qmk/keyboards
-          mkdir -p ahnaf/idkpad
-          cp -r ../../../../idkpad/* ahnaf/idkpad/
-      - name: Build firmware
+          mkdir -p vial-qmk/keyboards/ahnaf/idkpad
+          cp -r idkpad/* vial-qmk/keyboards/ahnaf/idkpad/
+
+      - name: Build idkpad firmware
         run: |
           cd vial-qmk
           make ahnaf/idkpad:vial
 
-      - name: Upload firmware artifact
+      - name: Upload compiled firmware
         uses: actions/upload-artifact@v4
         with:
-          name: firmware
-          path: vial-qmk/idkpad_vial.bin
+          name: idkpad-firmware
+          path: vial-qmk/*.bin
